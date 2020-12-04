@@ -36,41 +36,36 @@ namespace Drivingschool
                 if (ofd.ShowDialog()==DialogResult.OK)
                 {
                     //MessageBox.Show(ofd.FileName);
-                    var student = new Student();
+                    
                     using (var reader = new StreamReader(ofd.FileName)) {
                         reader.ReadLine(); // Első sor (fejlécek)
                         while (!reader.EndOfStream) {
 
                             var line = reader.ReadLine();
                             var adatok = line.Split(';');
-                            Student s = new Student();
-
-                            s.Name = adatok[0];
-                            s.BirthPlace = adatok[1];
-                            s.BirthDate = DateTime.Parse(adatok[2]);
-                            s.MotherName = adatok[3];
-                            s.Country = adatok[4];
-                            s.PostalCode = adatok[5];
-                            s.City = adatok[6];
-                            s.Address = adatok[7];
-                            s.Phone = adatok[8];
-                            s.Email = adatok[9];
-                            s.IDNum = adatok[10];
-                            s.Category = s.stringToEnum(adatok[11]);
-
+                            Student s = new Student(adatok);
                             students.addStudent(s);
-                            listView1.Items.Add(new ListViewItem(adatok));
+                            listView1.Items.Add(new ListViewItem(s.getArray()));
                             
                         }
                     }
                 }
-                MessageBox.Show(students.studentsNumber().ToString());
+                // MessageBox.Show(students.studentsNumber().ToString());
             }
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void listView1_DoubleClick(object sender, EventArgs e)
+        {
+            if (listView1.SelectedItems.Count > 0)
+            {
+                ListViewItem item = listView1.SelectedItems[0];
+                MessageBox.Show(item.SubItems[1].ToString());
+            }
         }
     }
 }

@@ -26,6 +26,20 @@ namespace DrivingSchool
         private string idNum;
         private string email;
 
+        public Student(string[] adatok) {
+            Name = adatok[0];
+            BirthPlace = adatok[1];
+            BirthDate = DateTime.Parse(adatok[2]);
+            MotherName = adatok[3];
+            Country = adatok[4];
+            PostalCode = adatok[5];
+            City = adatok[6];
+            Address = adatok[7];
+            Phone = adatok[8];
+            Email = adatok[9];
+            IDNum = adatok[10];
+            Category = stringToEnum(adatok[11]);
+        }
 
         // Setterek és Getterek --> Automatikusan létrehoznak attribútumokat, ezeket nem kell külön kiírni!
         public string Name { get; set; }
@@ -56,13 +70,13 @@ namespace DrivingSchool
         public string Email
         {
             get { return email; }
-            set { }
+            set { email = value; }
         }
         // Csak magyar személyi szám formátum! A jogsi feltétele a magyar személyi megléte!
         public string IDNum
         {
             get { return idNum; }
-            set { }
+            set { idNum = value;  }
         }
 
         public Categories Category { get; set; }
@@ -79,6 +93,12 @@ namespace DrivingSchool
                 default: return Categories.X;
 
             }
+        }
+
+        // Tömb formában adja vissza az adatokat a ListView számára
+        public string[] getArray() {
+            string[] ret = { Name, BirthDate.Date.ToString(), BirthPlace, MotherName, Country, PostalCode, City, Address, Phone, Email, IDNum, Category.ToString() };
+            return ret;
         }
        
     }
