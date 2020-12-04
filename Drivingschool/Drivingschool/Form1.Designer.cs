@@ -31,6 +31,19 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fájlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.csvImportálásaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.Név = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Születési_idő = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Születési_dátum = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Anyja_neve = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Ország = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Irányítószám = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Település = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Cím = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Telefon = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Email = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.SZIG_szám = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Kategória = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,11 +73,60 @@
             this.csvImportálásaToolStripMenuItem.Text = "csv importálása";
             this.csvImportálásaToolStripMenuItem.Click += new System.EventHandler(this.csvImportálásaToolStripMenuItem_Click);
             // 
+            // listView1
+            // 
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Név,
+            this.Születési_idő,
+            this.Születési_dátum,
+            this.Anyja_neve,
+            this.Ország,
+            this.Irányítószám,
+            this.Település,
+            this.Cím,
+            this.Telefon,
+            this.Email,
+            this.SZIG_szám,
+            this.Kategória});
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(12, 163);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(776, 231);
+            this.listView1.TabIndex = 1;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            // 
+            // Név
+            // 
+            this.Név.Text = "Név";
+            // 
+            // Születési_idő
+            // 
+            this.Születési_idő.Text = "Születési_idő";
+            // 
+            // Születési_dátum
+            // 
+            this.Születési_dátum.Text = "Születési_dátum";
+            // 
+            // Anyja_neve
+            // 
+            this.Anyja_neve.Text = "Anyja_neve";
+            // 
+            // Ország
+            // 
+            this.Ország.Text = "Ország";
+            // 
+            // Irányítószám
+            // 
+            this.Irányítószám.Text = "Irányítószám";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.listView1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
@@ -82,6 +144,19 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fájlToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem csvImportálásaToolStripMenuItem;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ColumnHeader Név;
+        private System.Windows.Forms.ColumnHeader Születési_idő;
+        private System.Windows.Forms.ColumnHeader Születési_dátum;
+        private System.Windows.Forms.ColumnHeader Anyja_neve;
+        private System.Windows.Forms.ColumnHeader Ország;
+        private System.Windows.Forms.ColumnHeader Irányítószám;
+        private System.Windows.Forms.ColumnHeader Település;
+        private System.Windows.Forms.ColumnHeader Cím;
+        private System.Windows.Forms.ColumnHeader Telefon;
+        private System.Windows.Forms.ColumnHeader Email;
+        private System.Windows.Forms.ColumnHeader SZIG_szám;
+        private System.Windows.Forms.ColumnHeader Kategória;
     }
 }
 

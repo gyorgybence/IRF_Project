@@ -59,12 +59,18 @@ namespace Drivingschool
                             s.Category = s.stringToEnum(adatok[11]);
 
                             students.addStudent(s);
+                            listView1.Items.Add(new ListViewItem(adatok));
                             
                         }
                     }
                 }
                 MessageBox.Show(students.studentsNumber().ToString());
             }
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
