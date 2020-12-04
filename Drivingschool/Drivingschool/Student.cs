@@ -7,22 +7,20 @@ using System.Windows.Forms;
 
 namespace DrivingSchool
 {
-    enum Categories
+
+    public class Student
     {
-        B,      // Személyautó
-        BE,     // Személyautó kombinált nehézpótkocsi
-        AM,     // Robogó
-        A1B,    // Korlátozott mkp. meglévő B-vel
-        A1,     // Korlátozott mkp.
-        A2,     // Korlátozott mkp.
-        A,      // Korlátlan mkp.
-        C,      // Teherautó
-        CE,     // Teherautó kombinált nehézpótkocsi
-        D,      // Autóbusz
-        DE      // Autóbusz kombinált nehézpótkocsi
-    }
-    class Student
-    {
+       
+
+        public enum Categories
+        {
+            B,      // Személyautó
+            AM,     // Robogó
+            A1,     // Korlátozott mkp.
+            A2,     // Korlátozott mkp.
+            A,      // Korlátlan mkp.
+            X       // NEM DEFINIÁLT
+        }
         // Attribútumok, melyekhez tartozó propertykben valamilyen validáció történik, azaz get; és set; águk nem alapértelmezett.
         private string postalCode;
         private string idNum;
@@ -71,5 +69,17 @@ namespace DrivingSchool
 
         // Metódusok
 
+        public Categories stringToEnum(string s) {
+            switch (s) {
+                case "B": return Categories.B;
+                case "AM": return Categories.AM;
+                case "A1": return Categories.A1;
+                case "A2": return Categories.A2;
+                case "A": return Categories.A;
+                default: return Categories.X;
+
+            }
+        }
+       
     }
 }
