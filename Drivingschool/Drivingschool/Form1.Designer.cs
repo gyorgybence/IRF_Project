@@ -54,7 +54,7 @@
             this.fájlToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1120, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -69,7 +69,7 @@
             // csvImportálásaToolStripMenuItem
             // 
             this.csvImportálásaToolStripMenuItem.Name = "csvImportálásaToolStripMenuItem";
-            this.csvImportálásaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.csvImportálásaToolStripMenuItem.Size = new System.Drawing.Size(195, 26);
             this.csvImportálásaToolStripMenuItem.Text = "csv importálása";
             this.csvImportálásaToolStripMenuItem.Click += new System.EventHandler(this.csvImportálásaToolStripMenuItem_Click);
             // 
@@ -91,7 +91,7 @@
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(12, 163);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(776, 231);
+            this.listView1.Size = new System.Drawing.Size(1096, 255);
             this.listView1.TabIndex = 1;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -126,7 +126,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1120, 556);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;

@@ -45,12 +45,17 @@ namespace Drivingschool
                             var adatok = line.Split(';');
                             Student s = new Student(adatok);
                             students.addStudent(s);
-                            listView1.Items.Add(new ListViewItem(s.getArray()));
+                            
                             
                         }
                     }
                 }
                 // MessageBox.Show(students.studentsNumber().ToString());
+            }
+            listView1.Items.Clear();
+            foreach ( var s in students.StudentList)
+            {
+                listView1.Items.Add(new ListViewItem(s.getArray()));
             }
         }
 
