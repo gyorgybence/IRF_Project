@@ -29,6 +29,7 @@ namespace DrivingSchool
         private string postalCode;
         private string idNum;
         private string email;
+       
 
         public Student(string[] adatok) {
             Name = adatok[0];
@@ -43,9 +44,11 @@ namespace DrivingSchool
             Email = adatok[9];
             IDNum = adatok[10];
             Category = stringToEnum(adatok[11]);
+            Azonosito = adatok[12];
         }
 
         // Setterek és Getterek --> Automatikusan létrehoznak attribútumokat, ezeket nem kell külön kiírni!
+        public string Azonosito { get; private set; } 
         public string Name { get; set; }
         public string BirthPlace { get; set; }
         public DateTime BirthDate { get; set; }
@@ -101,7 +104,7 @@ namespace DrivingSchool
 
         // Tömb formában adja vissza az adatokat a ListView számára
         public string[] getArray() {
-            string[] ret = { Name, BirthDate.Date.ToString(), BirthPlace, MotherName, Country, PostalCode, City, Address, Phone, Email, IDNum, Category.ToString() };
+            string[] ret = { Name, BirthDate.Date.ToString(), BirthPlace, MotherName, Country, PostalCode, City, Address, Phone, Email, IDNum, Category.ToString(),Azonosito };
             return ret;
         }
        

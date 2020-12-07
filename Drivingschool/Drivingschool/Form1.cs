@@ -38,22 +38,32 @@ namespace Drivingschool
                     //MessageBox.Show(ofd.FileName);
                     
                     using (var reader = new StreamReader(ofd.FileName)) {
-                        reader.ReadLine(); // Első sor (fejlécek)
-                        while (!reader.EndOfStream) {
+                        try
+                        {
+                            reader.ReadLine(); // Első sor (fejlécek)
+                            while (!reader.EndOfStream)
+                            {
 
-                            var line = reader.ReadLine();
-                            var adatok = line.Split(';');
-                            Student s = new Student(adatok);
-                            students.addStudent(s);
-                            
-                            
+                                var line = reader.ReadLine();
+                                var adatok = line.Split(';');
+                                Student s = new Student(adatok);
+                                students.addStudent(s);
+
+
+                            }
                         }
+                        catch(Exception ex) { MessageBox.Show(ex.ToString()); }
                     }
+                    refreshlistview();
                 }
                 // MessageBox.Show(students.studentsNumber().ToString());
             }
+            
+        }
+        public void refreshlistview()
+        {
             listView1.Items.Clear();
-            foreach ( var s in students.StudentList)
+            foreach (var s in students.StudentList)
             {
                 listView1.Items.Add(new ListViewItem(s.getArray()));
             }
@@ -68,12 +78,12 @@ namespace Drivingschool
         {
             if (listView1.SelectedItems.Count ==1)
             {
-                var id = listView1.SelectedItems[0].SubItems[10].Text;
-                var category = new Student().stringToEnum(listView1.SelectedItems[0].SubItems[11].Text);
-                Student selectedStudent = students.getStudent(id, category);
+                var azon = listView1.SelectedItems[0].SubItems[12].Text;
+                Student selectedStudent = students.getStudent(azon);
                 //MessageBox.Show(selectedStudent.Name);
                 var f2 = new Form2(selectedStudent);
-                f2.Show();
+                f2.ShowDialog();
+                refreshlistview();
             }
         }
     }

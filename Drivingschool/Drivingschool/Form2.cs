@@ -103,5 +103,10 @@ namespace Drivingschool
         {
             student.Category = new Student().stringToEnum(comboBox1.SelectedItem.ToString());
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -18,7 +18,7 @@ namespace Drivingschool
         }
 
         public void addStudent(Student s) {
-            if (StudentList.Find(x => x.IDNum == s.IDNum && x.Category == s.Category) == null)
+            if (StudentList.Find(x => x.Azonosito==s.Azonosito) == null)
             {
                 StudentList.Add(s);
             }
@@ -27,12 +27,14 @@ namespace Drivingschool
                 MessageBox.Show(s.Name + "A tanuló szerepel a rendszerben");
             }
         }
-        public Student getStudent (string id, Categories cat) 
+        public Student getStudent (string azonosito) 
             {
-            return StudentList.Find(x => x.IDNum == id && x.Category == cat);
+            return StudentList.Find(x => x.Azonosito == azonosito);
             }
            
         
         public int studentsNumber() { return StudentList.Count; }
+
+        
     }
 }

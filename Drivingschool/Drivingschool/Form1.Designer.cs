@@ -44,6 +44,8 @@
             this.Email = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SZIG_szám = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Kategória = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.azonosito = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,7 +65,7 @@
             this.fájlToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.csvImportálásaToolStripMenuItem});
             this.fájlToolStripMenuItem.Name = "fájlToolStripMenuItem";
-            this.fájlToolStripMenuItem.Size = new System.Drawing.Size(44, 24);
+            this.fájlToolStripMenuItem.Size = new System.Drawing.Size(44, 26);
             this.fájlToolStripMenuItem.Text = "fájl";
             // 
             // csvImportálásaToolStripMenuItem
@@ -87,7 +89,8 @@
             this.Telefon,
             this.Email,
             this.SZIG_szám,
-            this.Kategória});
+            this.Kategória,
+            this.azonosito});
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(12, 163);
             this.listView1.Name = "listView1";
@@ -122,11 +125,25 @@
             // 
             this.Irányítószám.Text = "Irányítószám";
             // 
+            // azonosito
+            // 
+            this.azonosito.Text = "Azonosító";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(1006, 457);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1120, 556);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -158,6 +175,8 @@
         private System.Windows.Forms.ColumnHeader Email;
         private System.Windows.Forms.ColumnHeader SZIG_szám;
         private System.Windows.Forms.ColumnHeader Kategória;
+        private System.Windows.Forms.ColumnHeader azonosito;
+        private System.Windows.Forms.Button button1;
     }
 }
 
