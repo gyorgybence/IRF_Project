@@ -66,10 +66,14 @@ namespace Drivingschool
 
         private void listView1_DoubleClick(object sender, EventArgs e)
         {
-            if (listView1.SelectedItems.Count > 0)
+            if (listView1.SelectedItems.Count ==1)
             {
-                ListViewItem item = listView1.SelectedItems[0];
-                MessageBox.Show(item.SubItems[1].ToString());
+                var id = listView1.SelectedItems[0].SubItems[10].Text;
+                var category = new Student().stringToEnum(listView1.SelectedItems[0].SubItems[11].Text);
+                Student selectedStudent = students.getStudent(id, category);
+                //MessageBox.Show(selectedStudent.Name);
+                var f2 = new Form2(selectedStudent);
+                f2.Show();
             }
         }
     }

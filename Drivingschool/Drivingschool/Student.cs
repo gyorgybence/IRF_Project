@@ -10,6 +10,10 @@ namespace DrivingSchool
 
     public class Student
     {
+        public Student()
+        {
+
+        }
        
 
         public enum Categories
