@@ -46,6 +46,7 @@
             this.Kategória = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.azonosito = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,13 +66,13 @@
             this.fájlToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.csvImportálásaToolStripMenuItem});
             this.fájlToolStripMenuItem.Name = "fájlToolStripMenuItem";
-            this.fájlToolStripMenuItem.Size = new System.Drawing.Size(44, 26);
+            this.fájlToolStripMenuItem.Size = new System.Drawing.Size(44, 24);
             this.fájlToolStripMenuItem.Text = "fájl";
             // 
             // csvImportálásaToolStripMenuItem
             // 
             this.csvImportálásaToolStripMenuItem.Name = "csvImportálásaToolStripMenuItem";
-            this.csvImportálásaToolStripMenuItem.Size = new System.Drawing.Size(195, 26);
+            this.csvImportálásaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.csvImportálásaToolStripMenuItem.Text = "csv importálása";
             this.csvImportálásaToolStripMenuItem.Click += new System.EventHandler(this.csvImportálásaToolStripMenuItem_Click);
             // 
@@ -125,6 +126,30 @@
             // 
             this.Irányítószám.Text = "Irányítószám";
             // 
+            // Település
+            // 
+            this.Település.Text = "Település";
+            // 
+            // Cím
+            // 
+            this.Cím.Text = "Cím";
+            // 
+            // Telefon
+            // 
+            this.Telefon.Text = "Telefon";
+            // 
+            // Email
+            // 
+            this.Email.Text = "Email";
+            // 
+            // SZIG_szám
+            // 
+            this.SZIG_szám.Text = "SZIG_szám";
+            // 
+            // Kategória
+            // 
+            this.Kategória.Text = "Kategória";
+            // 
             // azonosito
             // 
             this.azonosito.Text = "Azonosító";
@@ -135,17 +160,29 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 2;
-            this.button1.Text = "button1";
+            this.button1.Text = "Close";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(903, 457);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "export";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1120, 556);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Form1";
@@ -177,6 +214,7 @@
         private System.Windows.Forms.ColumnHeader Kategória;
         private System.Windows.Forms.ColumnHeader azonosito;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
 
