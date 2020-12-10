@@ -57,7 +57,7 @@
             this.fájlToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1120, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1120, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -66,13 +66,13 @@
             this.fájlToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.csvImportálásaToolStripMenuItem});
             this.fájlToolStripMenuItem.Name = "fájlToolStripMenuItem";
-            this.fájlToolStripMenuItem.Size = new System.Drawing.Size(44, 24);
+            this.fájlToolStripMenuItem.Size = new System.Drawing.Size(44, 26);
             this.fájlToolStripMenuItem.Text = "fájl";
             // 
             // csvImportálásaToolStripMenuItem
             // 
             this.csvImportálásaToolStripMenuItem.Name = "csvImportálásaToolStripMenuItem";
-            this.csvImportálásaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.csvImportálásaToolStripMenuItem.Size = new System.Drawing.Size(195, 26);
             this.csvImportálásaToolStripMenuItem.Text = "csv importálása";
             this.csvImportálásaToolStripMenuItem.Click += new System.EventHandler(this.csvImportálásaToolStripMenuItem_Click);
             // 
@@ -93,7 +93,7 @@
             this.Kategória,
             this.azonosito});
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(12, 163);
+            this.listView1.Location = new System.Drawing.Point(12, 71);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(1096, 255);
             this.listView1.TabIndex = 1;
@@ -156,9 +156,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(1006, 457);
+            this.button1.Font = new System.Drawing.Font("MS Reference Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button1.Location = new System.Drawing.Point(552, 413);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(201, 48);
             this.button1.TabIndex = 2;
             this.button1.Text = "Close";
             this.button1.UseVisualStyleBackColor = true;
@@ -166,11 +167,12 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(903, 457);
+            this.button2.Font = new System.Drawing.Font("MS Reference Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button2.Location = new System.Drawing.Point(314, 413);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(201, 48);
             this.button2.TabIndex = 3;
-            this.button2.Text = "export";
+            this.button2.Text = "Export";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // Form1

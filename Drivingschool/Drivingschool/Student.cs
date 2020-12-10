@@ -25,7 +25,7 @@ namespace DrivingSchool
             A,      // Korlátlan mkp.
             X       // NEM DEFINIÁLT
         }
-        // Attribútumok, melyekhez tartozó propertykben valamilyen validáció történik, azaz get; és set; águk nem alapértelmezett.
+       
         private string postalCode;
         private string idNum;
         private string email;
@@ -47,7 +47,7 @@ namespace DrivingSchool
             Azonosito = adatok[12];
         }
 
-        // Setterek és Getterek --> Automatikusan létrehoznak attribútumokat, ezeket nem kell külön kiírni!
+        
         public string Azonosito { get; private set; } 
         public string Name { get; set; }
         public string BirthPlace { get; set; }
@@ -55,7 +55,7 @@ namespace DrivingSchool
         public string MotherName { get; set; }
 
         public string Country { get; set; }
-        // Valid magyar négyjegyű irányítószám! A jogsi feltétele a magyar lakcím!
+        
         public string PostalCode
         {
             get { return postalCode; }
@@ -73,13 +73,13 @@ namespace DrivingSchool
         public string Address { get; set; }
         public string Phone { get; set; }
 
-        // Valid email formátum!
+        
         public string Email
         {
             get { return email; }
             set { email = value; }
         }
-        // Csak magyar személyi szám formátum! A jogsi feltétele a magyar személyi megléte!
+        
         public string IDNum
         {
             get { return idNum; }
@@ -88,7 +88,7 @@ namespace DrivingSchool
 
         public Categories Category { get; set; }
 
-        // Metódusok
+        
 
         public Categories stringToEnum(string s) {
             switch (s) {
@@ -102,7 +102,7 @@ namespace DrivingSchool
             }
         }
 
-        // Tömb formában adja vissza az adatokat a ListView számára
+       
         public string[] getArray() {
             string[] ret = { Name, BirthDate.Date.ToString(), BirthPlace, MotherName, Country, PostalCode, City, Address, Phone, Email, IDNum, Category.ToString(),Azonosito };
             return ret;
