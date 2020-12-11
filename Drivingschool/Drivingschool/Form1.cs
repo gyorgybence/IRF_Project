@@ -91,5 +91,30 @@ namespace Drivingschool
         {
             this.Close();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            List<Student> selected = new List<Student>();
+            foreach (ListViewItem item in listView1.SelectedItems)
+            {
+                var azon = item.SubItems[12].Text;
+                selected.Add(students.getStudent(azon));
+            }
+
+
+            using (SaveFileDialog sfd = new SaveFileDialog())
+            {
+                sfd.Filter = "Excel Files(.xls)|*.xls|  Excel Files(.xlsx)| .xlsx | Excel Files(.xlsm) | *.xlsm";
+                sfd.Title = "Válassza ki az útvonalat!";
+
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    new Excelexport().Export(sfd.FileName, selected);
+                }
+
+            }
+
+        }
+        
     }
 }
