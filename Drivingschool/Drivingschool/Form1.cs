@@ -24,10 +24,7 @@ namespace Drivingschool
             students = new Students();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void csvImportálásaToolStripMenuItem_Click(object sender, EventArgs e)
         {
