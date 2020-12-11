@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -62,11 +63,15 @@ namespace DrivingSchool
 
             set
             {
-                if (int.TryParse(value, out _) && value.Length == 4)
+                Regex r = new Regex(@"\d{4}");
+                if (r.IsMatch(value))
                 {
                     postalCode = value;
                 }
-                else { }
+                else {
+                    MessageBox.Show(Name + "tanuló irányítószáma hibás:" + value);
+                    postalCode = "0000";
+                }
             }
         }
         public string City { get; set; }
@@ -77,13 +82,38 @@ namespace DrivingSchool
         public string Email
         {
             get { return email; }
-            set { email = value; }
+            set
+            {
+                Regex r = new Regex(@"^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$");
+                if (r.IsMatch(value))
+                {
+                    email = value;
+                }
+                else
+                {
+                    MessageBox.Show(Name + "e-mail címe hibás: " + value);
+                    email = "x";
+                }
+            }
         }
         
         public string IDNum
         {
             get { return idNum; }
-            set { idNum = value;  }
+            set 
+            { 
+                Regex r = new Regex(@"\d{6}[a-zA-Z]{2}");
+                if (r.IsMatch(value))
+                {
+                    idNum = value;
+                }
+                else
+                {
+                    MessageBox.Show(Name + " tanuló szig. száma hibás: " + value);
+                    idNum = "x";
+                }
+
+            }
         }
 
         public Categories Category { get; set; }

@@ -63,12 +63,6 @@ namespace Drivingschool
         {
             student.Country = textBox5.Text;
         }
-
-        private void textBox6_TextChanged(object sender, EventArgs e)
-        {
-            student.PostalCode = textBox6.Text;
-        }
-
         private void textBox7_TextChanged(object sender, EventArgs e)
         {
             student.City = textBox7.Text;
@@ -83,17 +77,6 @@ namespace Drivingschool
         {
             student.Phone = textBox9.Text;
         }
-
-        private void textBox10_TextChanged(object sender, EventArgs e)
-        {
-            student.Email = textBox10.Text;
-        }
-
-        private void textBox11_TextChanged(object sender, EventArgs e)
-        {
-            student.IDNum = textBox11.Text;
-        }
-
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
             student.BirthDate = dateTimePicker1.Value;
@@ -107,6 +90,21 @@ namespace Drivingschool
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void textBox6_Leave(object sender, EventArgs e)
+        {
+            student.PostalCode = textBox6.Text;
+        }
+
+        private void textBox10_Leave(object sender, EventArgs e)
+        {
+            student.Email = textBox10.Text;
+        }
+
+        private void textBox11_Leave(object sender, EventArgs e)
+        {
+            student.IDNum = textBox11.Text;
         }
     }
 }

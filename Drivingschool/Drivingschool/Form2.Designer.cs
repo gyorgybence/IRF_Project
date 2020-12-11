@@ -93,7 +93,7 @@
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(184, 26);
             this.textBox6.TabIndex = 5;
-            this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
+            this.textBox6.Leave += new System.EventHandler(this.textBox6_Leave);
             // 
             // textBox7
             // 
@@ -125,7 +125,7 @@
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(184, 26);
             this.textBox10.TabIndex = 9;
-            this.textBox10.TextChanged += new System.EventHandler(this.textBox10_TextChanged);
+            this.textBox10.Leave += new System.EventHandler(this.textBox10_Leave);
             // 
             // textBox11
             // 
@@ -133,13 +133,13 @@
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(184, 26);
             this.textBox11.TabIndex = 10;
-            this.textBox11.TextChanged += new System.EventHandler(this.textBox11_TextChanged);
+            this.textBox11.Leave += new System.EventHandler(this.textBox11_Leave);
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(179, 151);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(251, 26);
+            this.dateTimePicker1.Size = new System.Drawing.Size(272, 26);
             this.dateTimePicker1.TabIndex = 12;
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
@@ -159,7 +159,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(151, 44);
             this.button1.TabIndex = 14;
-            this.button1.Text = "Close";
+            this.button1.Text = "Save";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
