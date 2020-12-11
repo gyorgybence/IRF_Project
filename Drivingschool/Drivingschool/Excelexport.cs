@@ -1,6 +1,7 @@
 ﻿using DrivingSchool;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -46,8 +47,11 @@ namespace Drivingschool
 
                 // Új munkalap
                 xlSheet = xlWB.ActiveSheet;
+                // Control átadása a felhasználónak
+                xlApp.Visible = true;
+                xlApp.UserControl = true;
 
-                
+
             }
             catch (Exception ex) // Hibakezelés a beépített hibaüzenettel
             {
@@ -62,9 +66,69 @@ namespace Drivingschool
             }
         }
 
-        public void Export(string path, List<Student> s)
+        public void Export( List<Student> selected)
         {
-            
+            for (int i = 0; i < headers.Length; i++)
+            {
+                xlSheet.Cells[1, i+1] = headers[i];
+            }
+            object[,] values = new object[selected.Count, headers.Length];
+            int counter = 0;
+            foreach ( var x  in selected)
+            {
+
+                values[counter, 0] = x.Name;
+                values[counter, 1] = x.BirthPlace;
+                values[counter, 2] = x.BirthDate.Date.ToString();
+                values[counter, 3] = x.MotherName;
+                values[counter, 4] = x.Country;
+                values[counter, 5] = x.PostalCode;
+                values[counter, 6] = x.City;
+                values[counter, 7] = x.Address;
+                values[counter, 8] = x.Phone;
+                values[counter, 9] = x.Email;
+                values[counter, 10] = x.IDNum;
+                values[counter, 11] = x.Category.ToString();
+                values[counter, 12] = x.Azonosito;
+                counter++;
+             
+            }
+            xlSheet.get_Range(
+             GetCell(2, 1),
+             GetCell(1 + values.GetLength(0), values.GetLength(1))).Value2 = values;
+            Excel.Range headerRange = xlSheet.get_Range(GetCell(1, 1), GetCell(1, headers.Length));
+            headerRange.Font.Bold = true;
+            headerRange.VerticalAlignment = Excel.XlVAlign.xlVAlignCenter;
+            headerRange.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+            headerRange.EntireColumn.AutoFit();
+            headerRange.RowHeight = 40;
+            headerRange.Interior.Color = Color.LightBlue;
+            headerRange.BorderAround2(Excel.XlLineStyle.xlContinuous, Excel.XlBorderWeight.xlThick);
+
+            Excel.Range namerange = xlSheet.get_Range(GetCell(2, 1), GetCell(selected.Count+1, 1));
+            namerange.Font.Bold = true;
+
+            Excel.Range datarange = xlSheet.get_Range(GetCell(2, 1), GetCell(selected.Count + 1, headers.Length));
+            datarange.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+
+
+
+        }
+        private string GetCell(int x, int y)
+        {
+            string ExcelCoordinate = "";
+            int dividend = y;
+            int modulo;
+
+            while (dividend > 0)
+            {
+                modulo = (dividend - 1) % 26;
+                ExcelCoordinate = Convert.ToChar(65 + modulo).ToString() + ExcelCoordinate;
+                dividend = (int)((dividend - modulo) / 26);
+            }
+            ExcelCoordinate += x.ToString();
+
+            return ExcelCoordinate;
         }
 
 
