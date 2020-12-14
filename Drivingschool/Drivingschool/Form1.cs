@@ -15,13 +15,13 @@ namespace Drivingschool
     
     public partial class Form1 : Form
     {
-        public Students students;
+        public Students students; // a lista egy példánya
 
 
         public Form1()
         {
             InitializeComponent();
-            students = new Students();
+            students = new Students(); // üres lista lesz belőle a null helyett
         }
 
        
@@ -43,15 +43,18 @@ namespace Drivingschool
 
                                 var line = reader.ReadLine();
                                 var adatok = line.Split(';');
-                                Student s = new Student(adatok);
+                                Student s = new Student(adatok); // itt hozzuk létre a tanulót 
                                 students.addStudent(s);
 
 
                             }
                         }
-                        catch(Exception ex) { MessageBox.Show(ex.ToString()); }
+                        catch(Exception ex) 
+                        {
+                            MessageBox.Show(ex.ToString());
+                        }
                     }
-                    refreshlistview();
+                    refreshlistview(); // frissiti a listview elemeit, azért mert beolvastuk a csv és hozzáadtam az adatokhpz de nem tettem bele a listviewbe
                 }
                 // MessageBox.Show(students.studentsNumber().ToString());
             }
@@ -59,10 +62,10 @@ namespace Drivingschool
         }
         public void refreshlistview()
         {
-            listView1.Items.Clear();
+            listView1.Items.Clear(); // törli, mindig bent ragadna az adat
             foreach (var s in students.StudentList)
             {
-                listView1.Items.Add(new ListViewItem(s.getArray()));
+                listView1.Items.Add(new ListViewItem(s.getArray()));// végig járom ha vannak adatok és hozzáadom a diákot a listview-be és mivel töbmböt kért itt jön elő a getarray függvény
             }
         }
 
@@ -75,12 +78,12 @@ namespace Drivingschool
         {
             if (listView1.SelectedItems.Count ==1)
             {
-                var azon = listView1.SelectedItems[0].SubItems[12].Text;
-                Student selectedStudent = students.getStudent(azon);
+                var azon = listView1.SelectedItems[0].SubItems[12].Text; // kiszedi annak a tanulónak az azonositóját aki kattintottam
+                Student selectedStudent = students.getStudent(azon); //  lekérdezi azt a tanuló objektumot akihez az azonosito tartotik
                 //MessageBox.Show(selectedStudent.Name);
-                var f2 = new Form2(selectedStudent);
+                var f2 = new Form2(selectedStudent); // megjeleniti a form2-őn az előbb lekérdezett a tanulót
                 f2.ShowDialog();
-                refreshlistview();
+                refreshlistview(); // ha átírsz valamit akkor nem frissül a listview , de az objektum az igen.
             }
         }
 
@@ -91,13 +94,14 @@ namespace Drivingschool
 
         private void button2_Click(object sender, EventArgs e)
         {
-            List<Student> selected = new List<Student>();
-            foreach (ListViewItem item in listView1.SelectedItems)
+            List<Student> selected = new List<Student>(); // kiválasztott tanulók listája
+            foreach (ListViewItem item in listView1.SelectedItems) // végigmegyek a kiválasztottakon
             {
-                var azon = item.SubItems[12].Text;
-                selected.Add(students.getStudent(azon));
+                var azon = item.SubItems[12].Text; // azonositóját kiszedem a kiválasztottaknak
+                selected.Add(students.getStudent(azon)); // lekérdezem az azonososító alapján a kiválasztott tanulókat és hozzáadom a selected listához.
             }
-            new Excelexport().Export(selected);
+            var exp = new Excelexport();
+            exp.Export(selected); // az excelexport osztályból csak a export függvény kell így példényosítom az osztályt
 
            
 

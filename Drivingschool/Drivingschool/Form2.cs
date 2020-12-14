@@ -15,11 +15,11 @@ namespace Drivingschool
     
     public partial class Form2 : Form
     {
-        private Student student;
+        private Student student; // ide kapja meg azt a tanulót akit megjelenít
        
         public Form2(Student s)
         {
-            student = s;
+            student = s; // itt kapja meg azt a tanulót mert előbb még null volt
             InitializeComponent();
            
 

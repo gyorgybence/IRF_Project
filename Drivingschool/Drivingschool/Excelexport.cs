@@ -70,7 +70,7 @@ namespace Drivingschool
         {
             for (int i = 0; i < headers.Length; i++)
             {
-                xlSheet.Cells[1, i+1] = headers[i];
+                xlSheet.Cells[1, i+1] = headers[i];    // kiirja a fejléceket
             }
             object[,] values = new object[selected.Count, headers.Length];
             int counter = 0;
@@ -84,7 +84,7 @@ namespace Drivingschool
                 values[counter, 4] = x.Country;
                 values[counter, 5] = x.PostalCode;
                 values[counter, 6] = x.City;
-                values[counter, 7] = x.Address;
+                values[counter, 7] = x.Address;                         // kiirja az adatokat
                 values[counter, 8] = x.Phone;
                 values[counter, 9] = x.Email;
                 values[counter, 10] = x.IDNum;
@@ -95,7 +95,9 @@ namespace Drivingschool
             }
             xlSheet.get_Range(
              GetCell(2, 1),
-             GetCell(1 + values.GetLength(0), values.GetLength(1))).Value2 = values;
+             GetCell(1 + values.GetLength(0), values.GetLength(1))).Value2 = values;  
+
+
             Excel.Range headerRange = xlSheet.get_Range(GetCell(1, 1), GetCell(1, headers.Length));
             headerRange.Font.Bold = true;
             headerRange.VerticalAlignment = Excel.XlVAlign.xlVAlignCenter;
