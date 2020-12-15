@@ -34,8 +34,8 @@
             this.csvImportálásaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listView1 = new System.Windows.Forms.ListView();
             this.Név = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Születési_hely = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Születési_dátum = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Születési_hely = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Anyja_neve = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Ország = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Irányítószám = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -58,7 +58,7 @@
             this.fájlToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1240, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1374, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -79,7 +79,7 @@
             // 
             // listView1
             // 
-            this.listView1.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.listView1.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Név,
             this.Születési_dátum,
@@ -94,11 +94,12 @@
             this.SZIG_szám,
             this.Kategória,
             this.azonosito});
-            this.listView1.ForeColor = System.Drawing.SystemColors.Window;
+            this.listView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.listView1.ForeColor = System.Drawing.Color.Black;
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(12, 71);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(1188, 336);
+            this.listView1.Size = new System.Drawing.Size(1355, 336);
             this.listView1.TabIndex = 1;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -109,19 +110,19 @@
             this.Név.Text = "Név";
             this.Név.Width = 78;
             // 
-            // Születési_hely
-            // 
-            this.Születési_hely.DisplayIndex = 1;
-            this.Születési_hely.Text = "Születési_hely";
-            this.Születési_hely.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.Születési_hely.Width = 108;
-            // 
             // Születési_dátum
             // 
             this.Születési_dátum.DisplayIndex = 2;
             this.Születési_dátum.Text = "Születési_dátum";
             this.Születési_dátum.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Születési_dátum.Width = 122;
+            // 
+            // Születési_hely
+            // 
+            this.Születési_hely.DisplayIndex = 1;
+            this.Születési_hely.Text = "Születési_hely";
+            this.Születési_hely.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Születési_hely.Width = 108;
             // 
             // Anyja_neve
             // 
@@ -186,7 +187,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("MS Reference Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button1.Location = new System.Drawing.Point(589, 451);
+            this.button1.Location = new System.Drawing.Point(838, 451);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(201, 48);
             this.button1.TabIndex = 2;
@@ -197,7 +198,7 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("MS Reference Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button2.Location = new System.Drawing.Point(347, 451);
+            this.button2.Location = new System.Drawing.Point(417, 451);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(201, 48);
             this.button2.TabIndex = 3;
@@ -209,7 +210,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1240, 535);
+            this.ClientSize = new System.Drawing.Size(1374, 535);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.listView1);
