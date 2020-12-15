@@ -70,7 +70,7 @@ namespace Drivingschool
         {
             for (int i = 0; i < headers.Length; i++)
             {
-                xlSheet.Cells[1, i+1] = headers[i];    // kiirja a fejléceket
+                xlSheet.Cells[1, i+1] = headers[i];    
             }
             object[,] values = new object[selected.Count, headers.Length];
             int counter = 0;
@@ -84,7 +84,7 @@ namespace Drivingschool
                 values[counter, 4] = x.Country;
                 values[counter, 5] = x.PostalCode;
                 values[counter, 6] = x.City;
-                values[counter, 7] = x.Address;                         // kiirja az adatokat
+                values[counter, 7] = x.Address;                         
                 values[counter, 8] = x.Phone;
                 values[counter, 9] = x.Email;
                 values[counter, 10] = x.IDNum;

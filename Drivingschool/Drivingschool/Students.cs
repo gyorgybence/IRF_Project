@@ -9,7 +9,7 @@ using static DrivingSchool.Student;
 
 namespace Drivingschool
 {
-    public class Students
+    public class Students 
     {
      
         public List<Student> StudentList { get; private set; }
@@ -18,7 +18,7 @@ namespace Drivingschool
         }
 
         public void addStudent(Student s) {
-            if (StudentList.Find(x => x.Azonosito==s.Azonosito) == null)
+            if (StudentList.Find(x => x.Azonosito==s.Azonosito) == null)  
             {
                 StudentList.Add(s);
             }
@@ -27,7 +27,7 @@ namespace Drivingschool
                 MessageBox.Show(s.Name + "A tanuló szerepel a rendszerben");
             }
         }
-        public Student getStudent (string azonosito) 
+        public Student getStudent (string azonosito)  
             {
             return StudentList.Find(x => x.Azonosito == azonosito);
             }

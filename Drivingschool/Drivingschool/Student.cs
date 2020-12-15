@@ -9,7 +9,7 @@ using System.Windows.Forms;
 namespace DrivingSchool
 {
 
-    public class Student
+    public class Student 
     {
         public Student()
         {
@@ -17,7 +17,7 @@ namespace DrivingSchool
         }
        
 
-        public enum Categories
+        public enum Categories // enumok
         {
             B,      // Személyautó
             AM,     // Robogó
@@ -32,7 +32,7 @@ namespace DrivingSchool
         private string email;
        
 
-        public Student(string[] adatok) {
+        public Student(string[] adatok) { 
             Name = adatok[0];
             BirthPlace = adatok[1];
             BirthDate = DateTime.Parse(adatok[2]);
@@ -120,7 +120,7 @@ namespace DrivingSchool
 
         
 
-        public Categories stringToEnum(string s) {
+        public Categories stringToEnum(string s) { 
             switch (s) {
                 case "B": return Categories.B;
                 case "AM": return Categories.AM;
@@ -135,7 +135,7 @@ namespace DrivingSchool
        
         public string[] getArray() {
             string[] ret = { Name, BirthDate.Date.ToString(), BirthPlace, MotherName, Country, PostalCode, City, Address, Phone, Email, IDNum, Category.ToString(),Azonosito };
-            return ret;
+            return ret; 
         }
        
     }
