@@ -104,7 +104,7 @@ namespace Drivingschool
             headerRange.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
             headerRange.EntireColumn.AutoFit();
             headerRange.RowHeight = 40;
-            headerRange.Interior.Color = Color.LightBlue;
+            headerRange.Interior.Color = Color.LimeGreen;
             headerRange.BorderAround2(Excel.XlLineStyle.xlContinuous, Excel.XlBorderWeight.xlThick);
 
             Excel.Range namerange = xlSheet.get_Range(GetCell(2, 1), GetCell(selected.Count+1, 1));
